@@ -156,7 +156,7 @@ header {
 
 #sobre-oscars h3 {
     font-size: 24px;
-    font-weight: 200;
+    font-weight: 400;
     text-align: justify;
     padding: 50px;
     margin-top: 0;
@@ -166,7 +166,7 @@ header {
 /* Estilo para termos e condições */
 
 footer {
-    margin-top: 0;
+    margin-top: 20px;
     display: grid;
     justify-content: center;
     place-items: center;
@@ -186,7 +186,7 @@ footer a:link {
 
 footer a:hover {
     text-decoration: underline;
-    font-weight: 300;
+    font-weight: 400;
     color: white !important;
 }
 
@@ -284,8 +284,12 @@ h2{
 /* Estilo para informações do filme */
 
 .info-filme {
-    width: 850px;
+    position: absolute;
+    width: 820px;
+    height: auto;
     display: grid;
+    grid-gap: 20px;
+    margin-left: 50px;
 }
 
 /* Estilo para titulo em português */
@@ -294,22 +298,54 @@ h2{
     color: rgba(181,145,48,1);
     font-size: 40px;
     font-weight: 900;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.titulo-original {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
 }
 
 /* Estilo para os dados do filme */
 
 .dados-filme {
     display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin: 0;
 
 }
 
 .dados-filme p {
-    font-size: 16px;
-    font-weight: 200;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
 }
 
+/* Estilo para sinopse */
 
+.sinopse-filme p {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
 
+/* Estilo para cast e crew */
+
+.cast-filme p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+/* Estilo para trailer */
+
+.trailer {    
+    margin-top: 160px;
+}
 
 /* Estilo para indicações */
 
@@ -322,6 +358,8 @@ h2{
 .indicações h3 {
     font-size: 24px;
     font-weight: 600;
+    margin: 0;
+    margin-top: 25px;
 }
 
 .categoria-vencedora {
@@ -335,7 +373,7 @@ h2{
 }
 
 .categoria-vencedora h5 {
-    font-weight: 200;
+    font-weight: 400;
     font-size: 14px;
     margin: 0;
 }
@@ -347,7 +385,7 @@ h2{
 }
 
 .categoria-indicada h5 {
-    font-weight: 200;
+    font-weight: 400;
     font-size: 14px;
     margin: 0;
 }
