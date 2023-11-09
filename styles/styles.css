@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+    background-color: rgba(21,21,21,1);
+    font-family: 'Gabarito', cursive;
+    color: white;        
+}
+
+/* Estilo para links gerais */
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilo para imagem de fundo principal */
+
+#img-fundo {
+    height: 100vh;
+    width: 100%;
+    background: url(../assets/img/FundoHome_TETLAMT.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+/* Estilo para logo */
+
+#logo {
+    position: fixed;
+    height: 35px;
+    padding: 16px;
+}
+
+/* Estilo para barra de navegação */
+
+header {
+    position: sticky;
+    top: 0;
+    font-size: 24px;
+    font-weight: 500;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    padding: 5px;
+    background: linear-gradient( rgba(21,21,21,1), transparent)
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    width: 570px;
+    justify-content: space-between;
+}
+
+.navbar a:hover{
+    font-weight: 700;
+}
+
+/* Estilo para a barra de pesquisa */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 580px;
+    height: 20px;
+    border: 3px solid #ccc;
+    background-color: rgba(255,255,255,.25);
+    opacity: 30%;
+    border-radius: 30px;
+    padding: 5px;
+    &:hover{
+        opacity: 100;
+    }
+}
+
+/* Estilo para o campo de entrada de texto */
+
+.search-bar input[type="text"] {
+    border: none;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+/* Estilo para o botão de pesquisa */
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    filter: invert(100%);
+}
+
+/* Estilo para texto sobre o site */
+
+#sobre-site {
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    margin-top: 30%;
+}
+
+#sobre-site h1 {
+    font-size: 40px;
+    font-weight: 700;
+    width: 750px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#sobre-site p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0;
+    width: 750px;
+    text-align: center;
+}
+
+/* Estilo para imagens da seção do oscars */
+
+.img-oscars {
+    display: grid;
+    grid-template-columns: repeat(3, 450px);
+    justify-content: center;
+    grid-gap: 10px    
+}
+
+.img-premiação {
+    width: 450px;
+    height: auto;
+}
+
+/* Estilo para texto sobre o oscar */
+
+#sobre-oscars {
+    margin: 50px;
+    display: grid;
+    justify-content: center;
+}
+
+#sobre-oscars h1 {
+    font-size: 80px;
+    font-weight: 600;
+    color: rgba(181,145,48,1);
+    margin-top: -35px;
+    margin-bottom: 0;
+}
+
+#sobre-oscars h3 {
+    font-size: 24px;
+    font-weight: 200;
+    text-align: justify;
+    padding: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Estilo para termos e condições */
+
+footer {
+    margin-top: 0;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    font-size: 16px;
+    font-weight: 100;
+    color: #bbb;
+}
+
+footer p {
+    margin-top: 0;
+}
+
+footer a:link {
+    color: #bbb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    font-weight: 300;
+    color: white !important;
+}
+
+footer a:visited {
+    color: #bbb;
+}
+
+.termos {
+    display: flex;
+    margin: 0 5px;
+}
+
+/*Estilo para indicados*/
+
+#nav-anos{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    font-weight: 600;
+    :hover{
+        color: rgba(181,145,48,1);
+    }
+}
+
+.anoSelecionado{
+    flex: auto;
+    color: rgba(181,145,48,1);
+}
+
+.anoRight{
+    margin-left: 8px;
+}
+
+#indicados{
+    display: grid;
+    justify-content: center;
+}
+
+h2{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.categoria{
+    display: grid;
+    grid-template-columns: repeat(5, 170px);
+    grid-gap: 16px;
+}
+
+.filmeCard{
+    width: 170px;
+    height: auto;    
+}
+
+.FilmeVencedor{
+    color: rgba(181,145,48,1);
+}
+
+.NomeFilme{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.cast{
+    text-align: left;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+.poster {
+    object-fit: cover;
+    width: 170px;
+    height: 250px;
+    border-radius: 10px;    
+}
+
+/* Estilo para imagem de fundo filmes */
+
+.fundo-filme {
+    height: 100vh;
+    width: 100%;
+    background: url(../assets/img/FILME\ TETOLAMT.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Estilo para informações do filme */
+
+.info-filme {
+    width: 850px;
+    display: grid;
+}
+
+/* Estilo para titulo em português */
+
+.titulo-br h1{
+    color: rgba(181,145,48,1);
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/* Estilo para os dados do filme */
+
+.dados-filme {
+    display: flex;
+
+}
+
+.dados-filme p {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+
+
+
+/* Estilo para indicações */
+
+.indicações {
+    display: grid;
+    justify-content: right;
+    margin-right: 50px;
+}
+
+.indicações h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.categoria-vencedora {
+    color: rgba(181,145,48,1);
+}
+
+.categoria-vencedora h4 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.categoria-vencedora h5 {
+    font-weight: 200;
+    font-size: 14px;
+    margin: 0;
+}
+
+.categoria-indicada h4 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.categoria-indicada h5 {
+    font-weight: 200;
+    font-size: 14px;
+    margin: 0;
+}
