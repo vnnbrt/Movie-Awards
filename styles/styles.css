@@ -335,16 +335,37 @@ h2{
 
 /* Estilo para cast e crew */
 
-.cast-filme p {
+.cast-filme {
+    font-size: 16px;
+    font-weight: 400;
     font-size: 16px;
     font-weight: 400;
     margin: 0px;
 }
 
+.cast-filme p {
+    margin: 0px;
+}
+
+/* Estilo para botão de ver mais */
+
+#more {
+    display: none;
+}
+
+#myBtn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 4px;
+    padding-bottom: 0;
+    cursor: pointer;
+}
+
 /* Estilo para trailer */
 
 .trailer {    
-    margin-top: 160px;
+    margin-top: 150px;
 }
 
 /* Estilo para indicações */
