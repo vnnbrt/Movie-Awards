@@ -302,7 +302,7 @@ h2{
     margin-top: 20px;
 }
 
-.titulo-original {
+#tituloOriginal {
     color: white;
     font-size: 18px;
     font-weight: 400;
@@ -314,7 +314,7 @@ h2{
 .dados-filme {
     display: flex;
     justify-content: space-between;
-    width: 350px;
+    width: 600px;
     margin: 0;
 
 }
@@ -327,7 +327,7 @@ h2{
 
 /* Estilo para sinopse */
 
-.sinopse-filme p {
+#sinopseFilme {
     font-size: 18px;
     font-weight: 600;
     margin: 0;
