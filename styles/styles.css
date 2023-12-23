@@ -1,412 +1,247 @@
-body {
-    margin: 0;
-    background-color: rgba(21,21,21,1);
-    font-family: 'Gabarito', cursive;
-    color: white;        
-}
+@layer base {
+    
+    body {
+        margin: 0;
+        background-color: rgba(21,21,21,1);
+        font-family: 'Gabarito', cursive;
+        color: white;        
+    }
 
-/* Estilo para links gerais */
+    /*Estilo para links gerais*/
 
-a:link {
-    text-decoration: none;
-    color: white;
-}
-
-a:visited {
-    text-decoration: none;
-    color: white;
-}
-
-/* Estilo para imagem de fundo principal */
-
-#img-fundo {
-    height: 100vh;
-    width: 100%;
-    background: url(../assets/img/FundoHome_TETLAMT.png);
-    background-size: cover;
-    background-position: bottom;
-}
-
-/* Estilo para logo */
-
-#logo {
-    position: fixed;
-    height: 35px;
-    padding: 16px;
-}
-
-/* Estilo para barra de navegação */
-
-header {
-    position: sticky;
-    top: 0;
-    font-size: 24px;
-    font-weight: 500;
-    display: grid;
-    justify-content: center;
-    place-items: center;
-    padding: 5px;
-    background: linear-gradient( rgba(21,21,21,1), transparent)
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    width: 570px;
-    justify-content: space-between;
-}
-
-.navbar a:hover{
-    font-weight: 700;
-}
-
-/* Estilo para a barra de pesquisa */
-
-.search-bar {
-    display: flex;
-    align-items: center;
-    width: 580px;
-    height: 20px;
-    border: 3px solid #ccc;
-    background-color: rgba(255,255,255,.25);
-    opacity: 30%;
-    border-radius: 30px;
-    padding: 5px;
-    &:hover{
-        opacity: 100;
+    a:link {
+        text-decoration: none;
+        color: white;
+    }
+    
+    a:visited {
+        text-decoration: none;
+        color: white;
     }
 }
 
-/* Estilo para o campo de entrada de texto */
+@layer header {
 
-.search-bar input[type="text"] {
-    border: none;
-    width: 100%;
-    padding: 5px;
-    outline: none;
-    color: white;
-    background-color: transparent;
-    font-size: 20px;
+    .navbar {
+        background: linear-gradient(rgba(21, 21, 21, 1), transparent);
+        padding: 15px;
+        font-size: 24px;
+        font-weight: 500;
+    }
+    
+    .navbar .logo {
+        float: left;
+        padding: 15px;
+    }
+
+    #logoImg {
+        height: 35px;
+        padding: 0 5px;
+    }
+      
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 570px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        margin: auto;
+    }
+      
+    .nav-list li {
+        display: inline;
+    }
+    
+    .navbar a:hover{
+        font-weight: 800;
+    }
+    
+    .search-form {
+        display: flex;
+        margin: auto;
+        align-items: center;
+        max-width: 580px;
+        height: 20px;
+        border: 3px solid #ccc;
+        background-color: rgba(255,255,255,.25);
+        opacity: 30%;
+        border-radius: 30px;
+        padding: 5px;
+        &:hover{
+         opacity: 100;
+        }
+    }
+      
+    .search-form input {
+        border: none;
+        width: 100%;
+        padding: 5px;
+        outline: none;
+        color: white;
+        background-color: transparent;
+        font-size: 20px;
+    }
+      
+    .search-form button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        filter: invert(100%);
+    }
+      
+    .menu-toggle {
+        float: right;
+        display: none;
+        cursor: pointer;
+        padding: 0 5px;
+    }
+      
+    .menu-toggle span {
+        background-color: white;
+        display: block;
+        width: 28px;
+        height: 3px;
+        margin: 4px 0 9px;
+    }
+      
+    @media screen and (max-width: 600px) {
+        .navbar .logo {
+          float: left;
+          padding: 0;
+        }
+      
+        .nav-list {
+          display: none;
+          text-align: right;
+          padding-right: 10px;
+        }
+      
+        .nav-list li {
+          display: block;
+        }
+      
+        .search-form {
+          float: none;         
+        }
+      
+        .menu-toggle {
+          display: block;
+        }
+    }
+
 }
 
-/* Estilo para o botão de pesquisa */
+@layer background {
 
-.search-bar button {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    filter: invert(100%);
+    #homeBg{
+        height: 100vh;
+        width: 100%;
+        background: url(../assets/img/IMG_EEAAO.png);
+        background-size: cover;
+        background-position: bottom;
+    }
 }
 
-/* Estilo para texto sobre o site */
+@layer infos-site {
 
-#sobre-site {
-    display: grid;
-    justify-content: center;
-    place-items: center;
-    margin-top: 30%;
+    #sobre-site {
+        display: grid;
+        justify-content: center;
+        place-items: center;
+        margin-top: 30%;
+        padding: 15px;
+    }
+    
+    #sobre-site h1 {
+        font-size: 40px;
+        font-weight: 700;
+        max-width: 750px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+    #sobre-site p {
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 0;
+        max-width: 750px;
+        text-align: center;
+    }
 }
 
-#sobre-site h1 {
-    font-size: 40px;
-    font-weight: 700;
-    width: 750px;
-    text-align: center;
-    margin-bottom: 0;
-}
+@layer infos-oscars {
 
-#sobre-site p {
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 0;
-    width: 750px;
-    text-align: center;
-}
+    #sobre-oscars {
+        padding: 35px;
+    }
 
-/* Estilo para imagens da seção do oscars */
-
-.img-oscars {
-    display: grid;
-    grid-template-columns: repeat(3, 450px);
-    justify-content: center;
-    grid-gap: 10px    
-}
-
-.img-premiação {
-    width: 450px;
-    height: auto;
-}
-
-/* Estilo para texto sobre o oscar */
-
-#sobre-oscars {
-    margin: 50px;
-    display: grid;
-    justify-content: center;
-}
-
-#sobre-oscars h1 {
-    font-size: 80px;
-    font-weight: 600;
-    color: rgba(181,145,48,1);
-    margin-top: -35px;
-    margin-bottom: 0;
-}
-
-#sobre-oscars h3 {
-    font-size: 24px;
-    font-weight: 400;
-    text-align: justify;
-    padding: 50px;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-/* Estilo para termos e condições */
-
-footer {
-    margin-top: 20px;
-    display: grid;
-    justify-content: center;
-    place-items: center;
-    font-size: 16px;
-    font-weight: 100;
-    color: #bbb;
-}
-
-footer p {
-    margin-top: 0;
-}
-
-footer a:link {
-    color: #bbb;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-    font-weight: 400;
-    color: white !important;
-}
-
-footer a:visited {
-    color: #bbb;
-}
-
-.termos {
-    display: flex;
-    margin: 0 5px;
-}
-
-/*Estilo para indicados*/
-
-#nav-anos{
-    margin-top: 32px;
-    display: flex;
-    flex-direction: row;
-    font-size: 24px;
-    font-weight: 600;
-    :hover{
+    #sobre-oscars h2 {
+        font-size: 70px;
+        font-weight: 600;
         color: rgba(181,145,48,1);
+        margin-top: -35px;
+        margin-bottom: 0;
+        overflow: hidden;
+    }
+
+    #sobre-oscars h3 {
+        font-size: 20px;
+        font-weight: 400;
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
-.anoSelecionado{
-    flex: auto;
-    color: rgba(181,145,48,1);
-}
+@layer footer {
 
-.anoRight{
-    margin-left: 8px;
-}
+    footer {
+        margin-top: 20px;
+        display: grid;
+        justify-content: center;
+        place-items: center;
+        font-size: 14px;
+        font-weight: 400;
+        color: white;
+        padding: 15px;
+    }
+    
+    footer p {
+        margin-top: 0;
+    }
+    
+    footer a:link {
+        color: white;
+        text-decoration: underline;
+    }
+    
+    footer a:hover {
+        font-weight: 500;
+        color: #bbb !important;
+    }
+    
+    footer a:visited {
+        color: white;
+    }
+    
+    .termos {
+        display: flex;
+        margin: 0 5px;
+    } 
 
-#indicados{
-    display: grid;
-    justify-content: center;
-}
+    @media screen and (max-width: 600px) {
+        footer {
+            display: grid;
+            justify-items: start;
+        }
 
-h2{
-    text-align: left;
-    font-size: 30px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.categoria{
-    display: grid;
-    grid-template-columns: repeat(5, 170px);
-    grid-gap: 16px;
-}
-
-.filmeCard{
-    width: 170px;
-    height: auto;    
-}
-
-.FilmeVencedor{
-    color: rgba(181,145,48,1);
-}
-
-.NomeFilme{
-    text-align: left;
-    font-size: 14px;
-    font-weight: 600;
-    margin-top: 8px;
-    margin-bottom: 0;
-}
-
-.cast{
-    text-align: left;
-    font-size: 12px;
-    font-weight: 400;
-    margin-top: 8px;
-}
-
-.poster {
-    object-fit: cover;
-    width: 170px;
-    height: 250px;
-    border-radius: 10px;    
-}
-
-/* Estilo para imagem de fundo filmes */
-
-.fundo-filme {
-    height: 100vh;
-    width: 100%;
-    background: url(../assets/img/FILME\ TETOLAMT.png);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-/* Estilo para informações do filme */
-
-.info-filme {
-    position: absolute;
-    width: 820px;
-    height: auto;
-    display: grid;
-    grid-gap: 20px;
-    margin-left: 50px;
-}
-
-/* Estilo para titulo em português */
-
-.titulo-br h1{
-    color: rgba(181,145,48,1);
-    font-size: 40px;
-    font-weight: 900;
-    margin: 0;
-    margin-top: 20px;
-}
-
-#tituloOriginal {
-    color: white;
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0;
-}
-
-/* Estilo para os dados do filme */
-
-.dados-filme {
-    display: flex;
-    justify-content: space-between;
-    width: 600px;
-    margin: 0;
-
-}
-
-.dados-filme p {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0;
-}
-
-/* Estilo para sinopse */
-
-#sinopseFilme {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-}
-
-/* Estilo para cast e crew */
-
-.cast-filme {
-    font-size: 16px;
-    font-weight: 400;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0px;
-}
-
-.cast-filme p {
-    margin: 0px;
-}
-
-/* Estilo para botão de ver mais */
-
-#more {
-    display: none;
-}
-
-#myBtn {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 4px;
-    padding-bottom: 0;
-    cursor: pointer;
-}
-
-/* Estilo para trailer */
-
-.trailer {    
-    margin-top: 150px;
-}
-
-/* Estilo para indicações */
-
-.indicações {
-    display: grid;
-    justify-content: right;
-    margin-right: 50px;
-}
-
-.indicações h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 0;
-    margin-top: 25px;
-}
-
-.categoria-vencedora {
-    color: rgba(181,145,48,1);
-}
-
-.categoria-vencedora h4 {
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 0;
-}
-
-.categoria-vencedora h5 {
-    font-weight: 400;
-    font-size: 14px;
-    margin: 0;
-}
-
-.categoria-indicada h4 {
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 0;
-}
-
-.categoria-indicada h5 {
-    font-weight: 400;
-    font-size: 14px;
-    margin: 0;
+        .termos {
+            display: grid;
+            justify-content: left;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+    }
 }

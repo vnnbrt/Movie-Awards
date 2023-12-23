@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/indicados.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Movie Awards.</title>
+    <meta name="description" content="O Movie Awards tem como objetivo principal fornecer informações detalhadas sobre os filmes indicados na maior premiação do cinema, The Oscars. Isso inclui detalhes sobre todos os indicados, os vencedores de cada categoria, sinopse, elenco, equipe, trailers e muito mais." />
+    <meta name="keywords" content="The Oscars, The Academy Awards, indicações ao oscar, categorias do oscar, vencedores do oscar" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <style>@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap');</style>
+</head>
+<body>
+    <header>             
+        <nav class="navbar">                
+            <div class="logo">
+                <img src="../assets/logoMA.png" id="logoImg" alt="logo Movie Awards">                
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>                
+            <ul class="nav-list" id="nav-list">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="./indicados.html">INDICADOS</a></li>
+            </ul>            
+            <form class="search-form" action="./resultados.html" method="get">
+                <input type="text" placeholder="Pesquisar filme" name="search" id="search-input">
+                <button type="submit"><img src="../assets/img/search-icon.png" style="max-width: 20px; max-height: 20px;"></button>
+            </form>
+        </nav>
+    </header>
+    <div id="catalog"></div> 
+    <footer>
+        <div class="termos">
+            <a href="#" class="termos" onClick="alerta()">TERMOS
+            </a>
+            <a href="#" class="termos" onClick="alerta()">CONDIÇÕES DE USO</a>
+            <a href="#" class="termos" onClick="alerta()">POLÍTICA DE PRIVACIDADE</a>
+        </div>
+        <p>Desenvolvido por <a href="https://www.linkedin.com/in/vinniebrito/">Vinnie Brito</a> como projeto final do curso de Desenvolvimento Web da <a href="https://www.coderhouse.com.br/">Coderhouse</a>. Dados dos filmes pelo <a href="https://www.themoviedb.org/">TMDB</a>. © 2023 </p>
+    </footer>
+    <script src="../scripts/scripts.js"></script>
+    <script src="../scripts/resultados.js"></script>
+</body>
+</html>

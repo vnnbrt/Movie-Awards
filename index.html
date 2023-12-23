@@ -11,31 +11,34 @@
     <style>@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap');</style>
 </head>
 <body>
-    <div id="img-fundo"> 
-        <img src="./assets/logoMA.png" id="logo" alt="Logo Movie Awards">             
-        <header>                   
-            <nav class="navbar">
-                <a href="./index.html" class="menu-item">HOME</a>
-                <a href="./pages/indicados2023.html" class="menu-item">INDICADOS</a>
+    <div id="homeBg">
+        <header>             
+            <nav class="navbar">                
+                <div class="logo">
+                    <img src="./assets/logoMA.png" id="logoImg" alt="logo Movie Awards">                
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>                
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="./pages/indicados.html">INDICADOS</a></li>
+                </ul>
+                <form class="search-form" action="./pages/resultados.html" method="get">
+                    <input type="text" placeholder="Pesquisar filme" name="search" id="search-input">
+                    <button type="submit"><img src="../assets/img/search-icon.png" style="max-width: 20px; max-height: 20px;"></button>
+                </form>
             </nav>
-            <form class="search-bar">
-                <input type="text" placeholder="">
-                <button type="submit"><img img src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" style="max-width: 65px; max-height: 65px;"></button>
-            </form>
         </header>
-
         <section id="sobre-site">
             <h1>Descubra os indicados e vencedores da maior premiação do cinema.</h1>
             <p>Saiba tudo sobre os filmes: sinopse, trailer, elenco, equipe, onde assistir e mais.</p>
         </section>
     </div>
     <article id="sobre-oscars">
-        <div class="img-oscars">
-            <img class="img-premiação" src="./assets/img/OSCARS PREMIAÇÃO.png" alt="Foto da cerimônia de premiação do Oscars">
-            <img class="img-premiação" src="./assets/img/OSCARS ESTAUETA.png" alt="Foto da estatueta do Oscars">
-            <img class="img-premiação" src="./assets/img/OSCARS TAPETE VERMELHO.png" alt="Foto do Tapete Vermelho do Oscars">
-        </div>
-        <h1>THE OSCARS</h1>
+        <h2>THE OSCARS</h2>
         <h3>O Oscars, formalmente conhecido como Academy Awards, é uma prestigiosa cerimônia de premiação anual dedicada à indústria cinematográfica. Organizado pela Academia de Artes e Ciências Cinematográficas dos Estados Unidos, o evento homenageia conquistas notáveis na produção cinematográfica, reconhecendo excelência em categorias como atuação, direção, roteiro, design de produção, edição, efeitos visuais, música e muito mais.
         <br><br>
         O Oscars é amplamente considerado o prêmio mais prestigioso no mundo do cinema e têm uma história rica que remonta a 1929. A cerimônia atrai atenção global, com celebridades e cineastas de todo o mundo reunidos para celebrar e reconhecer as melhores realizações cinematográficas do ano.
@@ -46,12 +49,13 @@
     </article>
     <footer>
         <div class="termos">
-            <a href="#" class="termos" onClick="alerta()">Termos</a>
-            <a href="#" class="termos" onClick="alerta()">Condições de uso</a>
-            <a href="#" class="termos" onClick="alerta()">Política de privacidade</a>
+            <a href="#" class="termos" onClick="alerta()">TERMOS
+            </a>
+            <a href="#" class="termos" onClick="alerta()">CONDIÇÕES DE USO</a>
+            <a href="#" class="termos" onClick="alerta()">POLÍTICA DE PRIVACIDADE</a>
         </div>
-            <p>Website desenvolvido por <a href="https://www.linkedin.com/in/vinniebrito/">Vinnie Brito</a> © 2023 Copyright </p>
+        <p>Desenvolvido por <a href="https://www.linkedin.com/in/vinniebrito/">Vinnie Brito</a> como projeto final do curso de Desenvolvimento Web da <a href="https://www.coderhouse.com.br/">Coderhouse</a>. Dados dos filmes pelo <a href="https://www.themoviedb.org/">TMDB</a>. © 2023 </p>
     </footer>
-    <script src="../scripts/script.js"></script>
+    <script src="./scripts/scripts.js"></script>    
 </body>
 </html>

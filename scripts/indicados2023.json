@@ -1,0 +1,81 @@
+{
+    "oscar_2023": [
+      {
+        "title": "Aftersun",
+        "movie_id": "965150",
+        "categorias": {          
+          "melhor_ator": [
+            "PAUL MESCAL"
+          ]
+        }
+      },
+      {
+        "title": "All the Beauty and the Bloodshed",
+        "movie_id": "1004663",
+        "categorias": {
+          "melhor_documentario_longa_metragem": [
+            "Laura Poitras, Howard Gertler, John Lyons, Nan Goldin and Yoni Golijov"
+          ]          
+        }
+      },
+
+      {
+        "title": "All the Beauty and the Bloodshed",
+        "movie_id": "1004663",
+        "categorias": {
+          "melhor_filme": [
+            "Christopher Nolan",
+            "John Doe",
+            "Jane Smith"
+          ],
+          "melhor_diretor": [
+            "Christopher Nolan",
+            "Quentin Tarantino",
+            "Greta Gerwig"
+          ],
+          "melhor_ator": [
+            "Tom Actor",
+            "John Performer",
+            "Michael Star"
+          ],
+          "melhor_atriz": [
+            "Emma Actress",
+            "Olivia Starlet",
+            "Sophia Performer"
+          ],
+          "melhor_ator_coadjuvante": [
+            "Supporting Actor 1",
+            "Supporting Actor 2",
+            "Supporting Actor 3"
+          ],
+          "melhor_atriz_coadjuvante": [
+            "Supporting Actress 1",
+            "Supporting Actress 2",
+            "Supporting Actress 3"
+          ],
+          "melhor_roteiro_original": [
+            "Alice Screenwriter",
+            "Bob Scriptwriter"
+          ],
+          "melhor_roteiro_adaptado": [
+            "Adapted Screenwriter 1",
+            "Adapted Screenwriter 2"
+          ],
+          "melhor_fotografia": [
+            "Olivia Photographer",
+            "William Cinematographer"
+          ],
+          "melhor_design_producao": [
+            "Production Designer 1",
+            "Production Designer 2"
+          ],
+          "melhor_figurino": [
+            "Costume Designer 1",
+            "Costume Designer 2"
+          ]
+          
+        }
+      }            
+    ]
+  }
+  
