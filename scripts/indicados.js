@@ -1,4 +1,4 @@
-// Navegação dos anos //
+// Navegação dos anos
 const yearList = document.getElementById('year-list');
 const leftArrow = document.querySelector('.arrow-left');
 const rightArrow = document.querySelector('.arrow-right');
@@ -18,28 +18,28 @@ function changeYear(selectedYear) {
     switch (selectedYear) {
         case '2023':
             createMovieGrid('Melhor Filme', '8283974', 10);
-            createMovieGrid('Melhor Direção', '8283977', 10);
-            createMovieGrid('Melhor Ator', '8283978', 10);
-            createMovieGrid('Melhor Atriz', '8283979', 10);
-            createMovieGrid('Melhor Ator Coadjuvante', '8283980', 10);
-            createMovieGrid('Melhor Atriz Coadjuvante', '8284065', 10);
-            createMovieGrid('Melhor Filme Internacional', '8284066', 10);
-            createMovieGrid('Melhor Roteiro Original', '8284067', 10);
-            createMovieGrid('Melhor Roteiro Adaptado', '8284068', 10);
-            createMovieGrid('Melhor Fotografia', '8284069', 10);
-            createMovieGrid('Melhor Trilha Sonora', '8284070', 10);
-            createMovieGrid('Melhor Canção Original', '8284071', 10);
-            createMovieGrid('Melhor Edição', '8284072', 10);
-            createMovieGrid('Melhor Figurino', '8284073', 10);
-            createMovieGrid('Melhor Design de Produção', '8284074', 10);
-            createMovieGrid('Melhor Maquiagem e Cabelo', '8284075', 10);
-            createMovieGrid('Melhor Som', '8284076', 10);
-            createMovieGrid('Melhores Efeitos Visuais', '8284077', 10);
-            createMovieGrid('Melhor Animação em Longa Metragem', '8284078', 10);
-            createMovieGrid('Melhor Animação em Curta Metragem', '8284079', 10);
-            createMovieGrid('Melhor Curta Metragem em Live Action', '8284080', 10);
-            createMovieGrid('Melhor Documentário em Longa Metragem', '8284082', 10);
-            createMovieGrid('Melhor Documentário em Curta Metragem', '8284083', 10);
+            createMovieGrid('Melhor Direção', '8283977', 5);
+            createMovieGrid('Melhor Ator', '8283978', 5);
+            createMovieGrid('Melhor Atriz', '8283979', 5);
+            createMovieGrid('Melhor Ator Coadjuvante', '8283980', 5);
+            createMovieGrid('Melhor Atriz Coadjuvante', '8284065', 5);
+            createMovieGrid('Melhor Filme Internacional', '8284066', 5);
+            createMovieGrid('Melhor Roteiro Original', '8284067', 5);
+            createMovieGrid('Melhor Roteiro Adaptado', '8284068', 5);
+            createMovieGrid('Melhor Fotografia', '8284069', 5);
+            createMovieGrid('Melhor Trilha Sonora', '8284070', 5);
+            createMovieGrid('Melhor Canção Original', '8284071', 5);
+            createMovieGrid('Melhor Edição', '8284072', 5);
+            createMovieGrid('Melhor Figurino', '8284073', 5);
+            createMovieGrid('Melhor Design de Produção', '8284074', 5);
+            createMovieGrid('Melhor Maquiagem e Cabelo', '8284075', 5);
+            createMovieGrid('Melhor Som', '8284076', 5);
+            createMovieGrid('Melhores Efeitos Visuais', '8284077', 5);
+            createMovieGrid('Melhor Animação em Longa Metragem', '8284078', 5);
+            createMovieGrid('Melhor Animação em Curta Metragem', '8284079', 5);
+            createMovieGrid('Melhor Curta Metragem em Live Action', '8284080', 5);
+            createMovieGrid('Melhor Documentário em Longa Metragem', '8284082', 5);
+            createMovieGrid('Melhor Documentário em Curta Metragem', '8284083', 5);
             break;
         case '2022':
             createMovieGrid('Sua Lista de 2022', 'ID_DA_SUA_LISTA_DE_2022', 10);
@@ -82,7 +82,7 @@ function updateArrows() {
 window.addEventListener('load', updateArrows);
 window.addEventListener('resize', updateArrows);
 
-// Lista de Indicados //
+// Grid Indicados
 const apiKey = '1c6b6173b321fb9096a6d807cfbfa48a';
 
 async function fetchMovies(listId) {
@@ -91,20 +91,18 @@ async function fetchMovies(listId) {
     return data.results;
 }
 
-function markAsWatched(title) {
-    const posters = document.querySelectorAll('.poster');
+function markAsWatched(movie) {
+    const posterId = `watched_${movie.id}`;
+    const isWatched = JSON.parse(localStorage.getItem(posterId)) || false;
+    
+    localStorage.setItem(posterId, JSON.stringify(!isWatched));
+
+    const posters = document.querySelectorAll(`.poster[data-movie-id="${movie.id}"]`);
 
     posters.forEach(poster => {
-        const posterTitle = poster.querySelector('h3').innerText;
-
-        if (posterTitle === title) {
-            const isWatched = JSON.parse(localStorage.getItem(title)) || false;
-            localStorage.setItem(title, JSON.stringify(!isWatched));
-
-            poster.classList.toggle('watched', !isWatched);
-            const eyeIcon = poster.querySelector('.eye-icon');
-            eyeIcon.classList.toggle('fa-eye-slash', !isWatched);
-        }
+        poster.classList.toggle('watched', !isWatched);
+        const eyeIcon = poster.querySelector('.eye-icon');
+        eyeIcon.classList.toggle('fa-eye-slash', !isWatched);
     });
 }
 
@@ -130,9 +128,13 @@ function createMovieGrid(listTitle, listId, maxPosters = 5) {
 
     fetchMovies(listId)
         .then(movies => {
+            
+            movies.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+
             movies.slice(0, maxPosters).forEach(movie => {
                 const posterElement = document.createElement('div');
                 posterElement.classList.add('poster');
+                posterElement.setAttribute('data-movie-id', movie.id); 
                 postersElement.appendChild(posterElement);
 
                 const img = document.createElement('img');
@@ -144,16 +146,16 @@ function createMovieGrid(listTitle, listId, maxPosters = 5) {
                 posterElement.appendChild(overlay);
 
                 const title = document.createElement('h3');
-                title.innerText = movie.title;
+                title.innerText = movie.title || 'Título desconhecido'; 
                 overlay.appendChild(title);
 
                 const overview = document.createElement('p');
                 const maxOverviewLength = 150;
 
-                if (movie.overview.length > maxOverviewLength) {
+                if (movie.overview && movie.overview.length > maxOverviewLength) {
                     overview.innerText = movie.overview.substring(0, maxOverviewLength) + '...';
                 } else {
-                    overview.innerText = movie.overview;
+                    overview.innerText = movie.overview || 'Sinopse não disponível'; 
                 }
 
                 overlay.appendChild(overview);
@@ -162,7 +164,7 @@ function createMovieGrid(listTitle, listId, maxPosters = 5) {
                 eyeIcon.classList.add('eye-icon', 'far', 'fa-eye');
                 overlay.appendChild(eyeIcon);
 
-                const isWatched = JSON.parse(localStorage.getItem(movie.title)) || false;
+                const isWatched = JSON.parse(localStorage.getItem(`watched_${movie.id}`)) || false;
                 posterElement.classList.toggle('watched', isWatched);
                 eyeIcon.classList.toggle('fa-eye-slash', isWatched);
 
@@ -172,7 +174,7 @@ function createMovieGrid(listTitle, listId, maxPosters = 5) {
 
                 eyeIcon.addEventListener('click', (event) => {
                     event.stopPropagation();
-                    markAsWatched(movie.title);
+                    markAsWatched(movie);
                 });
             });
         })
