@@ -40,11 +40,7 @@ function changeYear(selectedYear) {
             createMovieGrid('Melhor Curta Metragem em Live Action', '8284080', 5);
             createMovieGrid('Melhor Documentário em Longa Metragem', '8284082', 5);
             createMovieGrid('Melhor Documentário em Curta Metragem', '8284083', 5);
-            break;
-        case '2022':
-            createMovieGrid('Sua Lista de 2022', 'ID_DA_SUA_LISTA_DE_2022', 10);
-            // Criar as outras listas
-            break;
+            break;        
         // Adicionar os outros anos
         default:
             null;

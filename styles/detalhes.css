@@ -9,6 +9,7 @@
         width: 100%;
         height: 100%;
         background-size: cover;
+        background-position: center;
         z-index: -1;
     }
 
@@ -23,10 +24,10 @@
     }
 }
 
-@layer infos-movies{
+@layer infos-movies {
 
     #details-container {
-        max-width: 600px;
+        max-width: 1100px;
         margin: 0;
         padding: 20px;
         position: relative;
@@ -56,8 +57,15 @@
     #infos-container{
         display: flex;
         justify-content: space-between;
-        max-width: 600px;
+        max-width: 1100px;
         margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+        #infos-container{
+            display: grid;
+            margin-top: 10px;
+        }        
     }
 
     #release-year, #genres, #duration, #rating {
@@ -101,7 +109,7 @@
     #trailer-container {
         position: relative;
         margin-top: 20px;
-        max-width: 600px;           
+        max-width: 1100px;           
     }
 
     #trailer iframe{
@@ -129,3 +137,69 @@
     }
 
 } 
+
+@layer nominees {
+
+    .nomination-container{
+        padding: 15px;
+    }
+
+    .nomination-container h2{
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .nomination-container h3{
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    .nomination-category {
+        margin-bottom: 25px;
+    }
+    
+    .nominees-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+    }
+    
+    .nominees-list li {
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: 400;
+    }    
+   
+    .nomination-category h3.winner,
+    .nominees-list li.winner {
+        color: rgba(181,145,48,1);
+    }
+}
+
+@layer main-display {
+        
+    main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    article {
+        flex: 2;
+        margin-right: 50px;
+    }
+
+    aside {
+        flex: 1; 
+    }
+
+    @media (max-width: 800px) {
+        main {
+            flex-direction: column;
+        }
+
+        article, aside {
+            flex: 1;
+            margin-right: 0;
+        }
+    }
+}
