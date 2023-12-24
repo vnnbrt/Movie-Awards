@@ -131,7 +131,7 @@
     }
     
     .watched {
-        filter: brightness(0%);
+        filter: brightness(30%);
     }
     
     @media (max-width: 1024px) {
